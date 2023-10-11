@@ -50,9 +50,6 @@ In the first stage, a set of helper functions was created in order to easily vis
 
 The first approach was to analyze the Dataset and the labels and subjects distribution
 
-## 👨‍🔬 Modelling
-
-The first approach was to train 2 Pytorch EfficientNet models (EffNetB0, EffNetB2) with **5 and 10 epochs** using the pretrained model weights of EffNetB0 for the DataLoaders in order to stablish a baseline. The **EffNetB2 with 10 epochs** showed the best performance above **93%** on the test set.
 
 <p align="center">
     <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
@@ -65,13 +62,17 @@ The first approach was to train 2 Pytorch EfficientNet models (EffNetB0, EffNetB
 
 
 <p align="center">
-    <img src="images/wordcloud.png" width="700" height="500"/>
+    <img src="images/wordcloud.png"/>
 </p>
 
 
 <p align="center">
     <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
 
+
+## 👨‍🔬 Modelling
+
+The first approach was to train 2 Pytorch EfficientNet models (EffNetB0, EffNetB2) with **5 and 10 epochs** using the pretrained model weights of EffNetB0 for the DataLoaders in order to stablish a baseline. The **EffNetB2 with 10 epochs** showed the best performance above **93%** on the test set.
 
 
 

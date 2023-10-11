@@ -44,7 +44,7 @@ In the first stage, a set of helper functions was created in order to easily vis
 
 - **Plot WordCLoud**: Generate a word cloud for a specific label value and display it in a subplot
 - **Plot Confusion Matrix**: Plot a confusion matrix to visualize classification results
-- **## Plot Precision/Recall Results**: Calculates model accuracy, precision, recall, and F1-score of a binary classification model and returns the results as a DataFrame
+- **Plot Precision/Recall Results**: Calculates model accuracy, precision, recall, and F1-score of a binary classification model and returns the results as a DataFrame
 
 ## 👨‍🔬 Data Analysis
 

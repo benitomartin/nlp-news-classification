@@ -40,7 +40,7 @@ The app can be tested following this [link](https://huggingface.co/spaces/bmarti
 
 ## 📐 Set Up
 
-In the first stage, a set of helper functions was created in order to easily visualize the data analysis and modelling results
+In the first stage, a set of helper functions was created in order to easily visualize the data analysis and modelling results:
 
 - **Plot WordCLoud**: Generate a word cloud for a specific label value and display it in a subplot
 - **Plot Confusion Matrix**: Plot a confusion matrix to visualize classification results
@@ -48,23 +48,26 @@ In the first stage, a set of helper functions was created in order to easily vis
 
 ## 👨‍🔬 Data Analysis
 
-The first approach was to analyze the dataset columns and ist distribution. The dataset contains the following columns:
+The first approach was to analyze the dataset columns and ist distribution. The dataset contains the following columns, divided in two files (fake and true):
 
 - Title
 - Text
+- Subject
+- Date
 
 <p align="center">
     <img src="images/dataset.png"/>
 </p>
 
-The labels are pretty well balance as they are close to 50% each.
+
+After merging the datasets we see that the labels are pretty well balance as they are close to 50% each. So in this respect the is no need to do oversampling or undersampling. The number of news is 23481 (fake) and 21417 (true), after removal of duplicates (209 rows).
 
 
 <p align="center">
     <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
 </p>
 
-On the other hands, the subjects contains 8 topics, from which the 2 most popular are all true news and the other 6 fake. This means that there is no mix of labels within subjects
+On the other hands, the subjects contains 8 topics, from which the 2 most popular are all true news and the other 6 fake. This means that there is no mix of labels within subjects.
 </p>
 <p align="center">
     <img src="images/subjects distribution.png" width="700" height="500"/>
@@ -73,19 +76,26 @@ On the other hands, the subjects contains 8 topics, from which the 2 most popula
 <p align="center">
     <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
 
-Within the wordcloud, Trump and US are along the most common words in both labels
+Within the wordcloud, Trump and US are along the most common words in both labels.
 
 <p align="center">
     <img src="images/wordcloud.png"/>
 </p>
 
-## 👨‍🔬 Preprocessing
+## 👨📶 Preprocessing
 
 Along with the data analysis, the following data preprocessing steps where taken in order to create a clean dataset for the further modelling step:
 
 - Removal of duplicated rows
 - Removal of rows with empty cells
-- Merging of text and title column
+- Merging of text and title column in a common column
+- Cleaning of dataframe. This includes removal of punctuation, numbers, special characters, stopwords and lemmatization. 
+
+This lead again to the creation of around 6'000 duplicated rows that were removed, leading to a final dataset of 38'835 rows
+
+<p align="center">
+    <img src="images/final_lablels_distribution.png" width="700" height="500"/>
+</p>
 
 ## 👨‍🔬 Modelling
 

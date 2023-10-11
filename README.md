@@ -1,7 +1,7 @@
 # NEWS CLASIFFICATION 🦅
 
 <p align="center">
-    <img src="images/sample_image.jpg" width="500" height="400"/>
+    <img src="https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg" width="500" height="400"/>
 </p>
 
 This repository hosts a notebook featuring an in-depth analysis of several **RNN** models, together with **CNN** and **Multinomial Naive Bayes** along with an app deployment using Streamlit. The following models were meticulously evaluated:

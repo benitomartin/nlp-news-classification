@@ -6,6 +6,7 @@
 
 This repository hosts a notebook featuring an in-depth analysis of several **RNN** models, together with **CNN** and **Multinomial Naive Bayes** along with an app deployment using Streamlit. The following models were meticulously evaluated:
 
+- Basic Multinomial Naive Bayes 
 - Basic Keras Model
 - LSTM Model
 - LSTM GRU Model
@@ -91,7 +92,7 @@ Along with the data analysis, the following data preprocessing steps where taken
 - Merging of text and title column in a common column
 - Cleaning of dataframe. This includes removal of punctuation, numbers, special characters, stopwords and lemmatization. 
 
-This lead again to the creation of around 6'000 duplicated rows that were removed, leading to a final dataset of 38'835 rows
+This lead again to the creation of around 6'000 duplicated rows that were removed, leading to a final dataset of 38'835 rows, that still is well balanced.
 
 <p align="center">
     <img src="images/final_lablels_distribution.png" width="700" height="500"/>
@@ -99,8 +100,11 @@ This lead again to the creation of around 6'000 duplicated rows that were remove
 
 ## 👨‍🔬 Modelling
 
-The first approach was to train 2 Pytorch EfficientNet models (EffNetB0, EffNetB2) with **5 and 10 epochs** using the pretrained model weights of EffNetB0 for the DataLoaders in order to stablish a baseline. The **EffNetB2 with 10 epochs** showed the best performance above **93%** on the test set.
+Sevel models were trained with different set ups, mainly 5 CNN models, 1 CNN and 1 Multinomial Naive Bayes.
 
+<p align="center">
+    <img src="images/model_results.png"/>
+</p>
 
 
 ## ↗️ Model Improvement

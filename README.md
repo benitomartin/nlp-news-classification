@@ -19,7 +19,7 @@ This repository hosts a notebook featuring an in-depth analysis of several **RNN
 
 The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/gpiosenka/100-bird-species) and contains a set of Fake and Real News.
 
-The app can be tested following this [link](https://huggingface.co/spaces/bmartinc80/birds_pytorch).
+The app can be tested following this [link](https://nlp-news-classification.streamlit.app/).
 
 ## 👨‍💻 **Tech Stack**
 
@@ -136,7 +136,7 @@ All models demonstrated impressive performance, consistently achieving high accu
 
 ## 👏 App Deployment
 
-The last step was to deploy an app using Gradio. The app can be tested following this [link](https://huggingface.co/spaces/bmartinc80/birds_pytorch).
+The last step was to deploy an app using Gradio. The app can be tested following this [link](https://nlp-news-classification.streamlit.app/).
 
 <p align="center">
     <img src="images/app_deployment.png"/>

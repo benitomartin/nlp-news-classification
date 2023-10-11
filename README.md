@@ -106,14 +106,7 @@ Sevel models were trained with different set ups, mainly 5 CNN models, 1 CNN and
     <img src="images/model_results.png"/>
 </p>
 
-
-## ↗️ Model Improvement
-
-Then the EffNetB2 with 10 epochs was trained again but this time using the pretrained model weights of EffNetB2 for the DataLoaders. This time an accuracy above **95%** on the **test set** and above **93%** on the **validation set** was achieved .
-
-<p align="center">
-    <img src="images/effnetB2.png"/>
-</p>
+All models perfomed very well reaching accuracies above 90%. In a first step it was set up a baseline model using GridSearch for a Multinomial Naive Bayes with TfidfVectorizer. Afterwards, all models with TextVectorization were tested reaching accuracies above 99%. Finally, the model with the best performance, LSTM Bidirectional, was again tested but this time with tokenizer and embedding (text_to_word_sequence + Word2Vec Embedding). Although, the model performed very well, it showed a lower accuracy than the other ones. 
 
 ## 👏 App Deployment
 
@@ -122,3 +115,91 @@ The last step was to deploy and app hosted in Hugging Face using Gradio. This ap
 <p align="center">
     <img src="images/app_deployment.png"/>
 </p>
+
+
+
+# Project Overview
+
+## 📐 Set Up
+
+In the initial project phase, a set of essential helper functions was created to streamline data analysis and model evaluation. These functions include:
+
+- **Plot Word Cloud**: Generates a word cloud for a specific label value and displays it in a subplot.
+- **Plot Confusion Matrix**: Visualizes classification results using a confusion matrix.
+- **Plot Precision/Recall Results**: Computes model accuracy, precision, recall, and F1-score for binary classification models, returning the results in a DataFrame.
+
+## 👨‍🔬 Data Analysis
+
+The first step of the project involved a comprehensive analysis of the dataset, including its columns and distribution. The dataset consists of two files (fake and true), each with the following columns:
+
+- Title
+- Text
+- Subject
+- Date
+
+![Dataset](images/dataset.png)
+
+Upon merging the datasets, it became apparent that the labels are well-balanced, with both fake and true labels at approximately 50%, negating the need for oversampling or undersampling. The dataset initially contained 23,481 fake and 21,417 true news articles, with 209 duplicate rows removed.
+
+### Labels Distribution
+
+![Labels Distribution](images/raw_labels_distribution.png)
+
+The subjects column revealed eight different topics, with genuine news and fake news being the two most prominent categories. This indicates a clear separation of labels within subjects.
+
+### Subjects Distribution
+
+![Subjects Distribution](images/subjects_distribution.png)
+
+### Subjects vs Labels Distribution
+
+![Subjects vs Labels Distribution](images/subjects_vs_labels_distribution.png)
+
+A word cloud visualization showed that the terms "Trump" and "US" were among the most common words in both label categories.
+
+![Word Cloud](images/wordcloud.png)
+
+## 👨📶 Data Preprocessing
+
+In parallel with data analysis, several preprocessing steps were undertaken to create a clean dataset for further modeling:
+
+- Removal of duplicate rows
+- Elimination of rows with empty cells
+- Merging of the text and title columns into a single column
+- Dataframe cleaning, including punctuation removal, elimination of numbers, special character removal, stopword removal, and lemmatization
+
+These steps resulted in approximately 6,000 duplicated rows, which were subsequently removed, resulting in a final dataset of 38,835 rows while maintaining a balanced label distribution.
+
+### Final Labels Distribution
+
+![Final Labels Distribution](images/final_labels_distribution.png)
+
+## 👨‍🔬 Modeling
+
+The project involved training several models with varying configurations, primarily consisting of five CNN models, one CNN model combined with Multinomial Naive Bayes.
+
+### Model Results
+
+![Model Results](images/model_results.png)
+
+
+
+# Model Performance Evaluation
+
+All models demonstrated impressive performance, consistently achieving high accuracies, frequently surpassing the 90% mark. The model evaluation process involved several steps:
+
+1. **Baseline Model with GridSearch:**
+   - A Multinomial Naive Bayes model was established using the TfidfVectorizer.
+   - Despite being a basic model, it set the initial benchmark for performance.
+
+2. **Advanced Models with TextVectorization:**
+   - A series of models were tested with advanced text vectorization techniques.
+   - These models consistently reached accuracies exceeding 99%.
+   - The enhanced vectorization significantly improved model performance.
+
+3. **Best-Performing Model: LSTM Bidirectional with Tokenization and Word Embedding:**
+   - The LSTM Bidirectional model, known for its sequence modeling capabilities, was identified as the best performer.
+   - It was further evaluated with tokenizer and embedding, specifically using `text_to_word_sequence` and Word2Vec embedding.
+   - While the performance remained impressive, it exhibited a slightly lower accuracy compared to the other models.
+
+The high accuracy across all models indicates a strong predictive power in your classification task. It's worth noting that the choice of model and preprocessing techniques can significantly impact model performance, and the best approach may vary depending on the specific characteristics of the dataset and problem domain.

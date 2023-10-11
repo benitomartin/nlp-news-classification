@@ -76,6 +76,7 @@ On the other hands, the subjects contains 8 topics, from which the 2 most popula
 
 <p align="center">
     <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
+</p>
 
 Within the wordcloud, Trump and US are along the most common words in both labels.
 
@@ -108,15 +109,6 @@ Sevel models were trained with different set ups, mainly 5 CNN models, 1 CNN and
 
 All models perfomed very well reaching accuracies above 90%. In a first step it was set up a baseline model using GridSearch for a Multinomial Naive Bayes with TfidfVectorizer. Afterwards, all models with TextVectorization were tested reaching accuracies above 99%. Finally, the model with the best performance, LSTM Bidirectional, was again tested but this time with tokenizer and embedding (text_to_word_sequence + Word2Vec Embedding). Although, the model performed very well, it showed a lower accuracy than the other ones. 
 
-## 👏 App Deployment
-
-The last step was to deploy and app hosted in Hugging Face using Gradio. This app can be tested with available sample images or with own ones.
-
-<p align="center">
-    <img src="images/app_deployment.png"/>
-</p>
-
-
 
 # Project Overview
 
@@ -137,27 +129,40 @@ The first step of the project involved a comprehensive analysis of the dataset, 
 - Subject
 - Date
 
-![Dataset](images/dataset.png)
+<p align="center">
+    <img src="images/dataset.png"/>
+</p>
 
 Upon merging the datasets, it became apparent that the labels are well-balanced, with both fake and true labels at approximately 50%, negating the need for oversampling or undersampling. The dataset initially contained 23,481 fake and 21,417 true news articles, with 209 duplicate rows removed.
 
 ### Labels Distribution
 
-![Labels Distribution](images/raw_labels_distribution.png)
+<p align="center">
+    <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
+</p>
 
 The subjects column revealed eight different topics, with genuine news and fake news being the two most prominent categories. This indicates a clear separation of labels within subjects.
 
 ### Subjects Distribution
 
-![Subjects Distribution](images/subjects_distribution.png)
+</p>
+<p align="center">
+    <img src="images/subjects distribution.png" width="700" height="500"/>
+</p>
 
 ### Subjects vs Labels Distribution
 
-![Subjects vs Labels Distribution](images/subjects_vs_labels_distribution.png)
+<p align="center">
+    <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
+</p>
+
+### WordCloud
 
 A word cloud visualization showed that the terms "Trump" and "US" were among the most common words in both label categories.
 
-![Word Cloud](images/wordcloud.png)
+<p align="center">
+    <img src="images/wordcloud.png"/>
+</p>
 
 ## 👨📶 Data Preprocessing
 
@@ -172,7 +177,9 @@ These steps resulted in approximately 6,000 duplicated rows, which were subseque
 
 ### Final Labels Distribution
 
-![Final Labels Distribution](images/final_labels_distribution.png)
+<p align="center">
+    <img src="images/final_lablels_distribution.png" width="700" height="500"/>
+</p>
 
 ## 👨‍🔬 Modeling
 
@@ -180,8 +187,9 @@ The project involved training several models with varying configurations, primar
 
 ### Model Results
 
-![Model Results](images/model_results.png)
-
+<p align="center">
+    <img src="images/model_results.png"/>
+</p>
 
 
 # Model Performance Evaluation
@@ -202,4 +210,10 @@ All models demonstrated impressive performance, consistently achieving high accu
    - It was further evaluated with tokenizer and embedding, specifically using `text_to_word_sequence` and Word2Vec embedding.
    - While the performance remained impressive, it exhibited a slightly lower accuracy compared to the other models.
 
-The high accuracy across all models indicates a strong predictive power in your classification task. It's worth noting that the choice of model and preprocessing techniques can significantly impact model performance, and the best approach may vary depending on the specific characteristics of the dataset and problem domain.
+## 👏 App Deployment
+
+The last step was to deploy and app hosted in Hugging Face using Gradio. This app can be tested with available sample images or with own ones.
+
+<p align="center">
+    <img src="images/app_deployment.png"/>
+</p>

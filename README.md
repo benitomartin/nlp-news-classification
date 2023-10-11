@@ -1,4 +1,4 @@
-# NEWS CLASIFFICATION 🦅
+# NEWS CLASIFFICATION 🗞️
 
 <p align="center">
     <img src="https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg" width="500" height="400"/>
@@ -16,9 +16,9 @@ This repository hosts a notebook featuring an in-depth analysis of several **RNN
 
 
 
-The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/gpiosenka/100-bird-species) and contains a set of 525 bird species. 84635 training images, 2625 test images(5 images per species) and 2625 validation images(5 images per species).
+The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/gpiosenka/100-bird-species) and contains a set of Fake and Real News.
 
-The app can be tested in **Hugging Face** (.py files hosted there) following this [link](https://huggingface.co/spaces/bmartinc80/birds_pytorch).
+The app can be tested following this [link](https://huggingface.co/spaces/bmartinc80/birds_pytorch).
 
 ## 👨‍💻 **Tech Stack**
 
@@ -28,34 +28,52 @@ The app can be tested in **Hugging Face** (.py files hosted there) following thi
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23d9ead3.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 
+## 📐 Set Up
 
-## 🪶 Set Up
+In the first stage, a set of helper functions was created in order to easily visualize the data analysis and modelling results
 
-In the first stage, a set of helper functions was created in order to easily perform the modelling and prediction
+- **Plot WordCLoud**: Generate a word cloud for a specific label value and display it in a subplot
+- **Plot Confusion Matrix**: Plot a confusion matrix to visualize classification results
+- **## Plot Precision/Recall Results**: Calculates model accuracy, precision, recall, and F1-score of a binary classification model and returns the results as a DataFrame
 
-- **Set seed**: Set random seeds for PyTorch operations, both on the CPU and the GPU
-- **DataLoaders**: Create data loaders for training and testing datasets using PyTorch's DataLoader class
-- **Writer**: SummaryWriter object for logging experiments and metrics in TensorBoard
-- **Training and Testing**: Several functions for training and testing a PyTorch model 
-- **Plots**: Several plots including loss curve, predictions and images
+## 👨‍🔬 Data Analysis
 
-## 📳 Modelling
+The first approach was to analyze the Dataset and the labels and subjects distribution
+
+## 👨‍🔬 Modelling
 
 The first approach was to train 2 Pytorch EfficientNet models (EffNetB0, EffNetB2) with **5 and 10 epochs** using the pretrained model weights of EffNetB0 for the DataLoaders in order to stablish a baseline. The **EffNetB2 with 10 epochs** showed the best performance above **93%** on the test set.
 
 <p align="center">
-    <img src="images/accuracy.png" width="700" height="500"/>
+    <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
+</p>
+
+</p>
+<p align="center">
+    <img src="images/subjects distribution.png" width="700" height="500"/>
 </p>
 
 
 <p align="center">
-    <img src="images/birds_predictions.png"/>
+    <img src="images/wordcloud.png" width="700" height="500"/>
 </p>
+
+
+<p align="center">
+    <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
+
+
+
 
 ## ↗️ Model Improvement
 

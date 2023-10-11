@@ -54,7 +54,7 @@ The first approach was to analyze the dataset columns and ist distribution. The 
 - Text
 
 <p align="center">
-    <img src="images/dataset.png" width="700" height="500"/>
+    <img src="images/dataset.png"/>
 </p>
 
 The labels are pretty well balance as they are close to 50% each.

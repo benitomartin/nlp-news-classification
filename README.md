@@ -48,27 +48,27 @@ In the first stage, a set of helper functions was created in order to easily vis
 
 ## 👨‍🔬 Data Analysis
 
-The first approach was to analyze the Dataset and the labels and subjects distribution
+The first approach was to analyze the dataset columns and ist distribution. The labels are pretty well balance as they are close to 50% each.
 
 
 <p align="center">
     <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
 </p>
 
+On the other hands, the subjects contains 8 topics, from which the 2 most popular are all true news and the other 6 fake. This means that there is no mix of labels within subjects
 </p>
 <p align="center">
     <img src="images/subjects distribution.png" width="700" height="500"/>
 </p>
 
+<p align="center">
+    <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
+
+Within the wordcloud, Trump and US are along the most common words in both labels
 
 <p align="center">
     <img src="images/wordcloud.png"/>
 </p>
-
-
-<p align="center">
-    <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
-
 
 ## 👨‍🔬 Modelling
 

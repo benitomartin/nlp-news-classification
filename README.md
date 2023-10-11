@@ -41,79 +41,6 @@ The app can be tested following this [link](https://huggingface.co/spaces/bmarti
 
 ## 📐 Set Up
 
-In the first stage, a set of helper functions was created in order to easily visualize the data analysis and modelling results:
-
-- **Plot WordCLoud**: Generate a word cloud for a specific label value and display it in a subplot
-- **Plot Confusion Matrix**: Plot a confusion matrix to visualize classification results
-- **Plot Precision/Recall Results**: Calculates model accuracy, precision, recall, and F1-score of a binary classification model and returns the results as a DataFrame
-
-## 👨‍🔬 Data Analysis
-
-The first approach was to analyze the dataset columns and ist distribution. The dataset contains the following columns, divided in two files (fake and true):
-
-- Title
-- Text
-- Subject
-- Date
-
-<p align="center">
-    <img src="images/dataset.png"/>
-</p>
-
-
-After merging the datasets we see that the labels are pretty well balance as they are close to 50% each. So in this respect the is no need to do oversampling or undersampling. The number of news is 23481 (fake) and 21417 (true), after removal of duplicates (209 rows).
-
-
-<p align="center">
-    <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
-</p>
-
-On the other hands, the subjects contains 8 topics, from which the 2 most popular are all true news and the other 6 fake. This means that there is no mix of labels within subjects.
-</p>
-<p align="center">
-    <img src="images/subjects distribution.png" width="700" height="500"/>
-</p>
-
-<p align="center">
-    <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
-</p>
-
-Within the wordcloud, Trump and US are along the most common words in both labels.
-
-<p align="center">
-    <img src="images/wordcloud.png"/>
-</p>
-
-## 👨📶 Preprocessing
-
-Along with the data analysis, the following data preprocessing steps where taken in order to create a clean dataset for the further modelling step:
-
-- Removal of duplicated rows
-- Removal of rows with empty cells
-- Merging of text and title column in a common column
-- Cleaning of dataframe. This includes removal of punctuation, numbers, special characters, stopwords and lemmatization. 
-
-This lead again to the creation of around 6'000 duplicated rows that were removed, leading to a final dataset of 38'835 rows, that still is well balanced.
-
-<p align="center">
-    <img src="images/final_lablels_distribution.png" width="700" height="500"/>
-</p>
-
-## 👨‍🔬 Modelling
-
-Sevel models were trained with different set ups, mainly 5 CNN models, 1 CNN and 1 Multinomial Naive Bayes.
-
-<p align="center">
-    <img src="images/model_results.png"/>
-</p>
-
-All models perfomed very well reaching accuracies above 90%. In a first step it was set up a baseline model using GridSearch for a Multinomial Naive Bayes with TfidfVectorizer. Afterwards, all models with TextVectorization were tested reaching accuracies above 99%. Finally, the model with the best performance, LSTM Bidirectional, was again tested but this time with tokenizer and embedding (text_to_word_sequence + Word2Vec Embedding). Although, the model performed very well, it showed a lower accuracy than the other ones. 
-
-
-# Project Overview
-
-## 📐 Set Up
-
 In the initial project phase, a set of essential helper functions was created to streamline data analysis and model evaluation. These functions include:
 
 - **Plot Word Cloud**: Generates a word cloud for a specific label value and displays it in a subplot.
@@ -133,24 +60,21 @@ The first step of the project involved a comprehensive analysis of the dataset, 
     <img src="images/dataset.png"/>
 </p>
 
-Upon merging the datasets, it became apparent that the labels are well-balanced, with both fake and true labels at approximately 50%, negating the need for oversampling or undersampling. The dataset initially contained 23,481 fake and 21,417 true news articles, with 209 duplicate rows removed.
-
 ### Labels Distribution
+
+Upon merging the datasets, it became apparent that the labels are well-balanced, with both fake and true labels at approximately 50%, negating the need for oversampling or undersampling. The dataset initially contained 23,481 fake and 21,417 true news articles, with 209 duplicate rows removed.
 
 <p align="center">
     <img src="images/raw_lablels_distribution.png" width="700" height="500"/>
 </p>
 
-The subjects column revealed eight different topics, with genuine news and fake news being the two most prominent categories. This indicates a clear separation of labels within subjects.
-
 ### Subjects Distribution
+The subjects column revealed eight different topics, with true news and fake news being allocated in different subjects. This indicates a clear separation of labels within subjects.
 
 </p>
 <p align="center">
     <img src="images/subjects distribution.png" width="700" height="500"/>
 </p>
-
-### Subjects vs Labels Distribution
 
 <p align="center">
     <img src="images/subjects vs labels distribution.png" width="700" height="500"/>
@@ -164,7 +88,7 @@ A word cloud visualization showed that the terms "Trump" and "US" were among the
     <img src="images/wordcloud.png"/>
 </p>
 
-## 👨📶 Data Preprocessing
+## 📶 Data Preprocessing
 
 In parallel with data analysis, several preprocessing steps were undertaken to create a clean dataset for further modeling:
 
@@ -192,7 +116,7 @@ The project involved training several models with varying configurations, primar
 </p>
 
 
-# Model Performance Evaluation
+### Model Performance Evaluation
 
 All models demonstrated impressive performance, consistently achieving high accuracies, frequently surpassing the 90% mark. The model evaluation process involved several steps:
 
@@ -212,7 +136,7 @@ All models demonstrated impressive performance, consistently achieving high accu
 
 ## 👏 App Deployment
 
-The last step was to deploy and app hosted in Hugging Face using Gradio. This app can be tested with available sample images or with own ones.
+The last step was to deploy an app using Gradio. The app can be tested following this [link](https://huggingface.co/spaces/bmartinc80/birds_pytorch).
 
 <p align="center">
     <img src="images/app_deployment.png"/>

@@ -86,7 +86,7 @@ def main():
 
     
     # Load your TensorFlow SavedModel
-    model = tf.saved_model.load('../model')  # Replace 'your_model_directory' with the actual directory containing your SavedModel
+    model = tf.saved_model.load('model')  # Replace 'your_model_directory' with the actual directory containing your SavedModel
 
 
     if st.button("Predict"):

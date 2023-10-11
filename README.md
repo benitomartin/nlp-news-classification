@@ -124,14 +124,14 @@ All models demonstrated impressive performance, consistently achieving high accu
    - A Multinomial Naive Bayes model was established using the TfidfVectorizer.
    - Despite being a basic model, it set the initial benchmark for performance.
 
-2. **Advanced Models with TextVectorization:**
-   - A series of models were tested with advanced text vectorization techniques.
+2. **Advanced Models with TextVectorization and Keras Embedding:**
+   - A series of models were tested with advanced text vectorization and embedding techniques.
    - These models consistently reached accuracies exceeding 99%.
-   - The enhanced vectorization significantly improved model performance.
+   - The enhanced vectorization and embedding significantly improved model performance.
 
 3. **Best-Performing Model: LSTM Bidirectional with Tokenization and Word Embedding:**
    - The LSTM Bidirectional model, known for its sequence modeling capabilities, was identified as the best performer.
-   - It was further evaluated with tokenizer and embedding, specifically using `text_to_word_sequence` and Word2Vec embedding.
+   - It was further evaluated with a different tokenizer and embedding, specifically using `text_to_word_sequence` and Word2Vec embedding.
    - While the performance remained impressive, it exhibited a slightly lower accuracy compared to the other models.
 
 ## 👏 App Deployment

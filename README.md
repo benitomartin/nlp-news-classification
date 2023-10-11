@@ -48,7 +48,16 @@ In the first stage, a set of helper functions was created in order to easily vis
 
 ## 👨‍🔬 Data Analysis
 
-The first approach was to analyze the dataset columns and ist distribution. The labels are pretty well balance as they are close to 50% each.
+The first approach was to analyze the dataset columns and ist distribution. The dataset contains the following columns:
+
+- Title
+- Text
+
+<p align="center">
+    <img src="images/dataset.png" width="700" height="500"/>
+</p>
+
+The labels are pretty well balance as they are close to 50% each.
 
 
 <p align="center">
@@ -69,6 +78,14 @@ Within the wordcloud, Trump and US are along the most common words in both label
 <p align="center">
     <img src="images/wordcloud.png"/>
 </p>
+
+## 👨‍🔬 Preprocessing
+
+Along with the data analysis, the following data preprocessing steps where taken in order to create a clean dataset for the further modelling step:
+
+- Removal of duplicated rows
+- Removal of rows with empty cells
+- Merging of text and title column
 
 ## 👨‍🔬 Modelling
 

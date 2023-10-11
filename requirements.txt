@@ -1,0 +1,11 @@
+streamlit
+tensorflow
+nltk
+pandas
+numpy
+plotly
+matplotlib
+seaborn
+nltk
+gensim
+scikit-learn

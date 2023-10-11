@@ -17,7 +17,7 @@ This repository hosts a notebook featuring an in-depth analysis of several **RNN
 
 
 
-The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/gpiosenka/100-bird-species) and contains a set of Fake and Real News.
+The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset/data) and contains a set of Fake and Real News.
 
 The app can be tested following this [link](https://nlp-news-classification.streamlit.app/).
 

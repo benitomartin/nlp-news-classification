@@ -19,7 +19,7 @@ This repository hosts a notebook featuring an in-depth analysis of several **Neu
 
 The dataset used has been downloaded from [Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset/data) and contains a set of Fake and Real News.
 
-The app can be tested following this [link](https://nlp-news-classification.streamlit.app/).
+The app can be tested following this [link](https://nlp-news-classification.streamlit.app/). Feel free to ⭐ and clone this repo 😉
 
 ## 👨‍💻 **Tech Stack**
 
